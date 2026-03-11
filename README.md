@@ -25,14 +25,13 @@
                   2. 2. 每篇教學結尾都有練習題，建議動手實作
                      3. 3. 可以搭配範例檔案一起練習
                        
-                        4. ## 如何貢獻
-                       
-                        5. 本專案使用 **Claude Code GitHub Actions** 來自動產生教學內容：
-                       
-                        6. 1. 前往 [Issues](../../issues) 頁面
-                           2. 2. 建立新 Issue，描述你想要的教學內容
-                              3. 3. 為 Issue 加上 `claude` 標籤
-                                 4. 4. Claude 會自動讀取 Issue 並建立 PR 來新增教學內容
-                                   
-                                    5. ## 授權
-                                    6. MIT License
+## 如何貢獻
+
+1. Fork 此專案
+2. 建立新分支
+3. 提交你的教學內容
+4. 發送 Pull Request
+
+## 授權
+
+MIT License
