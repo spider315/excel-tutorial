@@ -8,8 +8,6 @@
 excel-tutorial/
 ├── README.md              # 專案介紹
 ├── CLAUDE.md              # Claude Code 指引
-├── .github/workflows/     # GitHub Actions
-│   └── claude.yml         # Claude Code Action 設定
 ├── 01-basics/             # 基礎教學
 │   ├── 01-interface.md    # Excel 介面介紹
 │   ├── 02-data-entry.md   # 資料輸入
@@ -33,7 +31,6 @@ excel-tutorial/
     - - 程式碼區塊使用適當的語法標記
       - - 每篇教學結尾提供練習題
        
-        - ## 貢獻指南
-        - - 建立 Issue 並加上 `claude` 標籤來請求 Claude 新增教學內容
-          - - Claude 會自動建立 PR 來新增內容
-            - - 所有教學內容需要經過審核後才能合併
+## 貢獻指南
+- Fork 此專案並建立 PR 來新增內容
+- 所有教學內容需要經過審核後才能合併
