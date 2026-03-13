@@ -1,0 +1,112 @@
+● List directory 03-advanced
+  └ 14 files found
+
+● List raw Excel files
+  $ Get-ChildItem "C:\Users\kuan6\cowork\excel-tutorial\03-advanced\raw" -ErrorAction
+  SilentlyContinue | Select-Object Name, Length
+  └ 7 lines...
+
+● Inspect raw Excel column names and sample data
+  $ cd "C:\Users\kuan6\cowork\excel-tutorial\03-advanced" && python -c "
+  import pandas as pd
+  # Check column names and sample data
+  for f in ['raw/monthly_sales.xlsx', 'raw/budget_targets.xlsx', 'raw/product_catalog.xlsx',
+  'raw/customer_feedback.xlsx']:...
+  └ 8 lines...
+
+● Inspect raw Excel files with python3
+  $ cd "C:\Users\kuan6\cowork\excel-tutorial\03-advanced" && python3 -c "
+  import pandas as pd
+  for f in ['raw/monthly_sales.xlsx', 'raw/budget_targets.xlsx', 'raw/product_catalog.xlsx',
+  'raw/customer_feedback.xlsx']:
+      df = pd.read_excel(f)...
+  └ 7 lines...
+
+● Find Python executable
+  $ where.exe python 2>$null; where.exe python3 2>$null; where.exe py 2>$null; Get-Command python*
+  -ErrorAction SilentlyContinue | Select-Object Name, Source
+  └ 12 lines...
+
+● Inspect raw Excel files
+  $ cd "C:\Users\kuan6\cowork\excel-tutorial\03-advanced" && C:\Users\kuan6\miniconda3\python.exe
+  -c "
+  import pandas as pd
+  for f in ['raw/monthly_sales.xlsx', 'raw/budget_targets.xlsx', 'raw/product_catalog.xlsx',
+  'raw/customer_feedback.xlsx']:...
+  └ 33 lines...
+
+● Check for dirty data patterns
+  $ cd "C:\Users\kuan6\cowork\excel-tutorial\03-advanced" && C:\Users\kuan6\miniconda3\python.exe
+  -c "
+  import pandas as pd
+  # Check for dirty data patterns
+  df = pd.read_excel('raw/monthly_sales.xlsx')...
+  └ 36 lines...
+
+● Check more data quality issues
+  $ cd "C:\Users\kuan6\cowork\excel-tutorial\03-advanced" && C:\Users\kuan6\miniconda3\python.exe
+  -c "
+  import pandas as pd
+  df = pd.read_excel('raw/monthly_sales.xlsx')
+  # Check for dates with / format  ...
+  └ 46 lines...
+
+● Check bracket names and catalog
+  $ cd "C:\Users\kuan6\cowork\excel-tutorial\03-advanced" && C:\Users\kuan6\miniconda3\python.exe
+  -c "
+  import pandas as pd
+  df = pd.read_excel('raw/monthly_sales.xlsx')
+  # Check for names with any brackets (Chinese or English)...
+  └ 16 lines...
+
+Now I have a complete picture of the data. Let me create the comprehensive script.
+
+● Create 03-advanced\advanced_analysis.py (+819)
+
+● Run advanced_analysis.py
+  $ cd "C:\Users\kuan6\cowork\excel-tutorial\03-advanced" && C:\Users\kuan6\miniconda3\python.exe
+  advanced_analysis.py 2>&1
+  └ 41 lines...
+
+Script runs successfully. Let me verify the output quality quickly:
+
+● Verify output data quality
+  $ cd "C:\Users\kuan6\cowork\excel-tutorial\03-advanced" && C:\Users\kuan6\miniconda3\python.exe
+  -c "
+  import pandas as pd
+
+  # Verify cleaning log...
+  └ 43 lines...
+
+所有任務完成，輸出正確。以下是執行結果：
+
+---
+
+**📁 output/ 產出檔案：**
+
+| 檔案 | 大小 |
+|------|------|
+| `cleaned_monthly_sales.xlsx` | 41.4 KB |
+| `cleaned_budget_targets.xlsx` | 7.3 KB |
+| `cleaned_customer_feedback.xlsx` | 13.5 KB |
+| `cleaning_log.xlsx` | 6.0 KB（16 筆修正） |
+| `sales_analysis_report.xlsx` | 14.4 KB（5 sheets） |
+| `kpi_dashboard.xlsx` | 9.3 KB（2 sheets） |
+| `product_profit_report.xlsx` | 6.7 KB |
+| `data_quality_report.xlsx` | 8.3 KB（3 sheets） |
+
+**📊 關鍵指標摘要：**
+- 年度有效銷售額：**NT$ 13,969,794**（723 筆訂單）
+- 業績冠軍：**趙彥廷**（NT$ 614,310）
+- 平均產品毛利率：**55.1%**
+- 資料品質問題：**16 筆**（含 6 個日期格式、4 個業務員名稱、5 個產品名稱、1 個括號標注）
+
+**清理亮點（16 筆）：** 3 個日期 `2024/xx/xx`→`-`、`張冠宇（代）`→`張冠宇`、`智彗手環`→`智慧手環`、`無線藍芽耳機`→`無線藍牙耳機`、業務員姓名內部空格（蕭 宥翔等3人）
+
+
+Total usage est:        1 Premium request
+API time spent:         4m 18s
+Total session time:     4m 51s
+Total code changes:     +819 -0
+Breakdown by AI model:
+ claude-sonnet-4.6       346.2k in, 17.9k out, 301.1k cached (Est. 1 Premium request)
