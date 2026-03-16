@@ -7,13 +7,18 @@
 
 適用的 AI 工具： Gemini CLI / Copilot 
 
-## 課程結構（三個資料夾）
+## 課程結構（八個資料夾）
 
 | # | 資料夾 | 主題 | 難度 | 核心內容 |
 |---|--------|------|------|----------|
 | 1 | `hr_demo/` | HR 退休作業自動化 | 基礎 | 資料清理、多檔比對、異常偵測、通知信產出 |
 | 2 | `03-advanced/` | 多維度銷售分析報表 | 進階 | 跨檔交叉分析、樞紐表、KPI 儀表板、條件格式 |
 | 3 | `04-excel-charts/` | Excel 自動圖表 × AI 指令 | 進階 | 8 種圖表 Prompt 寫法、圖表選型、儀表板整合 |
+| 4 | `05-finance/` | 財務報表自動化 | 進階 | 12個月費用彙整、損益表、預算達成分析、儀表板 |
+| 5 | `06-gantt/` | 專案排程甘特圖 | 進階 | 甘特圖繪製、進度追蹤、里程碑管理、條件格式 |
+| 6 | `07-customer-data/` | 客戶資料清洗與合併 | 進階 | 多來源名單合併、電話/Email標準化、去重 |
+| 7 | `08-inventory/` | 庫存管理與自動補貨提醒 | 進階 | 庫存水位分析、補貨建議、採購單產生 |
+| 8 | `09-survey/` | 問卷調查統計分析 | 進階 | 部門分析、題目分析、交叉分析、圖表儀表板 |
 
 ## 每個課程的檔案慣例
 
@@ -56,6 +61,11 @@ python <main-script>.py
 - `hr_demo/` → `process_data.py`
 - `03-advanced/` → `advanced_analysis.py`
 - `04-excel-charts/` → `chart_generator.py`
+- `05-finance/` → `finance_report.py`
+- `06-gantt/` → `gantt_chart.py`
+- `07-customer-data/` → `customer_merge.py`
+- `08-inventory/` → `inventory_manager.py`
+- `09-survey/` → `survey_analysis.py`
 
 ## 課程內容摘要
 
@@ -84,13 +94,54 @@ python <main-script>.py
 - 8 種圖表：折線圖、群組柱狀圖、圓餅圖、水平長條圖、組合圖、雷達圖、散佈圖、堆疊柱狀圖
 - 補充教材：`01-chart-type-guide.md`（選型決策樹）、`02-prompt-patterns.md`（Prompt 範本）
 
+### 4. 05-finance — 財務報表自動化（進階）
+
+**情境**：每月彙整費用明細，產生年度損益表與預算達成分析。
+
+- 輸入：`expense_detail_2025.xlsx`, `account_chart.xlsx`, `annual_budget_2025.xlsx`, `balance_sheet_items.xlsx`
+- 產出：清理後費用明細 + 損益表 + 預算達成分析 + 財務儀表板
+- 教學重點：跨工作表公式整合、條件格式標記異常數值
+
+### 5. 06-gantt — 專案排程甘特圖（進階）
+
+**情境**：用 Excel 建立專案時程甘特圖，追蹤任務進度與里程碑。
+
+- 輸入：`project_tasks.xlsx`, `milestones.xlsx`, `team_members.xlsx`
+- 產出：甘特圖 Excel + 進度追蹤報表 + 里程碑追蹤
+- 教學重點：日期計算、條件格式模擬甘特條、進度追蹤
+
+### 6. 07-customer-data — 客戶資料清洗與合併（進階）
+
+**情境**：多來源客戶名單去重、格式統一、欄位標準化。
+
+- 輸入：`crm_customers.xlsx`, `sales_customers.xlsx`, `web_registrations.xlsx`
+- 產出：客戶主檔 + 重複記錄清單 + 來源統計
+- 教學重點：VLOOKUP/XLOOKUP 概念、電話/Email 標準化、重複值偵測
+
+### 7. 08-inventory — 庫存管理與自動補貨提醒（進階）
+
+**情境**：庫存低於安全水位時自動標紅、產生補貨建議與採購單。
+
+- 輸入：`product_master.xlsx`, `inventory_detail.xlsx`, `suppliers.xlsx`, `transactions.xlsx`
+- 產出：補貨建議 + 庫存報表 + 供應商採購單
+- 教學重點：IF 條件判斷、資料驗證、安全庫存計算
+
+### 8. 09-survey — 問卷調查統計分析（進階）
+
+**情境**：員工滿意度問卷結果統計、部門比較與交叉分析。
+
+- 輸入：`survey_responses.xlsx`, `question_info.xlsx`, `department_info.xlsx`
+- 產出：部門分析 + 題目分析 + 交叉分析 + 圖表儀表板
+- 教學重點：COUNTIFS、樞紐分析表、圖表視覺化
+
 ## 簡報製作指引
 
 本專案的成果適合製作以下簡報：
 
-1. **課程總覽簡報** — 三堂課的架構、學習路徑、適用對象
+1. **課程總覽簡報** — 八堂課的架構、學習路徑、適用對象
 2. **各課程成果展示** — 執行 Python 腳本後產出的 Excel 截圖 / 圖表
 3. **Prompt 技巧精華** — 從 TUTORIAL.md 中擷取的 Prompt 範例與結構公式
+4. **職能應用簡報** — 依職能分類（HR、財務、PM、行銷、倉管）的專屬教學
 
 ## 開發注意事項
 
